@@ -1,6 +1,6 @@
 package entities;
 
-public enum bookGenre {
+public enum BookGenre {
     FICTION,
     HISTORY,
     MISTERY;

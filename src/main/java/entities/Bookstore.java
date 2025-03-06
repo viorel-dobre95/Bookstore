@@ -10,10 +10,22 @@ public class Bookstore {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer bookstoreId;
     private String name;
-    private String title;
-    private String genres;
+
     @OneToMany(mappedBy = "bookstore")
     private List <Book> bookList;
+
+    public Bookstore(String bookstoreName) {
+        this.name = bookstoreName;
+    }
+
+    public Bookstore() {
+    }
+
+    public Bookstore(Integer bookstoreId, String name, List<Book> bookList) {
+        this.bookstoreId = bookstoreId;
+        this.name = name;
+        this.bookList = bookList;
+    }
 
     public int getBookstoreId() {
         return bookstoreId;
@@ -31,27 +43,19 @@ public class Bookstore {
         this.name = name;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getGenres() {
-        return genres;
-    }
-
-    public void setGenres(String genres) {
-        this.genres = genres;
-    }
-
-    public List<String> getBookList() {
+    public List<Book> getBookList() {
         return bookList;
     }
 
-    public void setBookList(List<String> bookList) {
+    public void setBookList(List<Book> bookList) {
         this.bookList = bookList;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Bookstore{");
+        sb.append("name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

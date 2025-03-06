@@ -30,11 +30,11 @@ public class Author {
         this.authorId = authorId;
     }
 
-    public List<String> getBookList() {
+    public List<Book> getBookList() {
         return bookList;
     }
 
-    public void setBookList(List<String> bookList) {
+    public void setBookList(List<Book> bookList) {
         this.bookList = bookList;
     }
 }

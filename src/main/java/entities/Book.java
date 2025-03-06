@@ -16,7 +16,7 @@ public class Book {
     private double price;
     @ManyToOne
     @JoinColumn(name = "bookStoreId")
-    Bookstore bookStoreId;
+    Bookstore bookstore;
     @ManyToOne
     @JoinColumn(name = "authorId")
     private Author author;
@@ -69,11 +69,11 @@ public class Book {
         this.bookId = bookId;
     }
 
-    public int getBookStoreId() {
-        return bookStoreId;
+    public Bookstore getBookStoreId() {
+        return bookstore;
     }
 
-    public void setBookStoreId(int bookStoreId) {
-        this.bookStoreId = bookStoreId;
+    public void setBookStoreId(Bookstore bookStoreId) {
+        this.bookstore = bookStoreId;
     }
 }
