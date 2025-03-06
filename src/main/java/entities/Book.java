@@ -21,6 +21,14 @@ public class Book {
     @JoinColumn(name = "authorId")
     private Author author;
 
+    public Book() {
+    }
+
+    public Book(String bookName) {
+        this.bookName = bookName;
+    }
+
+
     public String getBookName() {
         return bookName;
     }
@@ -75,5 +83,13 @@ public class Book {
 
     public void setBookStoreId(Bookstore bookStoreId) {
         this.bookstore = bookStoreId;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Book{");
+        sb.append("bookName='").append(bookName).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
