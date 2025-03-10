@@ -3,6 +3,7 @@ package entities;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Book {
@@ -14,6 +15,10 @@ public class Book {
     private Date releaseDate;
     private String editor;
     private double price;
+
+    @OneToMany(mappedBy = "book")
+    List<Review> reviews;
+
     @ManyToOne
     @JoinColumn(name = "bookStoreId")
     Bookstore bookstore;
@@ -69,7 +74,7 @@ public class Book {
         this.price = price;
     }
 
-    public int getBookId() {
+    public Integer getBookId() {
         return bookId;
     }
 

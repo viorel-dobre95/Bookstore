@@ -21,7 +21,7 @@ public class Main {
                     "3 - Register a Book\n" +
                     "4 - Display all Books\n" +
                     "5 - Add a Review\n" +
-                    "6 - Display all Reviews\n");
+                    "6 - Display all reviews for a chosen book\n");
 
             System.out.print("Alegeti optiunea: ");
 
@@ -49,7 +49,7 @@ public class Main {
                     reviewService.addReview();
                     break;
                 case 6:
-                    System.out.println("Displaying all Reviews: ");
+                    reviewService.displayReview();
                     break;
                 default:
                     System.out.println("Invalid choice. Please enter a number between 0 and 6");

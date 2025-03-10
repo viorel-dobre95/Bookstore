@@ -16,7 +16,7 @@ public class BookstoreService {
         Scanner scanner = new Scanner(System.in);
         String bookstoreName = scanner.nextLine();
         Bookstore bookstore = new Bookstore(bookstoreName);
-        System.out.println(bookstore);
+        System.out.println("Your book has been registered: "+bookstore);
         Session session = sessionFactory.openSession();
         session.persist(bookstore);
         session.beginTransaction().commit();

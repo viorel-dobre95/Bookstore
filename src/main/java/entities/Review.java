@@ -10,9 +10,9 @@ public class Review {
     private Integer reviewId;
     @ManyToOne
     @JoinColumn(name = "bookId")
-    private Book bookId;
+    private Book book;
     private Date reviewDate;
-    private String reviwerUserName;
+    private String reviewText;
     private Integer reviewRate;
 
 
@@ -24,12 +24,12 @@ public class Review {
         this.reviewDate = reviewDate;
     }
 
-    public String getReviwerUserName() {
-        return reviwerUserName;
+    public String getreviewText() {
+        return reviewText;
     }
 
-    public void setReviwerUserName(String reviwerUserName) {
-        this.reviwerUserName = reviwerUserName;
+    public void setreviewText(String reviewText) {
+        this.reviewText = reviewText;
     }
 
     public int getReviewRate() {
@@ -48,11 +48,22 @@ public class Review {
         this.reviewId = reviewId;
     }
 
-    public Book getBookId() {
-        return bookId;
+    public Book getBook() {
+        return book;
     }
 
-    public void setBookId(Book bookId) {
-        this.bookId = bookId;
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder();
+        sb.append("Review Details:").append('\n');
+        sb.append("Book: ").append(book.getBookName()).append('\n');
+        sb.append("Review: ").append(reviewText).append('\n');
+        sb.append("Rating: ").append(reviewRate).append(" / 5").append('\n');
+        sb.append("\n-----------------------------\n\n");
+        return sb.toString();
     }
 }
